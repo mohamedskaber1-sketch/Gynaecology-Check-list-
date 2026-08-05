@@ -1,0 +1,132 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'>
+<style>body{font-family:Arial;max-width:900px;margin:auto;padding:20px;background:#f5f5f5}
+table{width:100%;border-collapse:collapse;background:#fff}td,th{border:1px solid #ddd;padding:8px}input{width:70px}
+progress{width:100%;height:25px}</style></head><body>
+<h2>Gynecology Progress Tracker</h2>
+<h3 id=txt>0%</h3><progress id=bar max=100 value=0></progress>
+<table><tr><th>Topic</th><th>Last page</th><th>Done</th></tr><tr>
+<td>Anatomy<br><small>2-14 (13 p)</small></td>
+<td><input type="number" min="2" max="14" value="1" id="p0" onchange="update()"></td>
+<td id="t0">0%</td>
+</tr><tr>
+<td>Embryology<br><small>15-18 (4 p)</small></td>
+<td><input type="number" min="15" max="18" value="14" id="p1" onchange="update()"></td>
+<td id="t1">0%</td>
+</tr><tr>
+<td>Physiology<br><small>19-27 (9 p)</small></td>
+<td><input type="number" min="19" max="27" value="18" id="p2" onchange="update()"></td>
+<td id="t2">0%</td>
+</tr><tr>
+<td>Puberty & Menopause<br><small>28-36 (9 p)</small></td>
+<td><input type="number" min="28" max="36" value="27" id="p3" onchange="update()"></td>
+<td id="t3">0%</td>
+</tr><tr>
+<td>Anovulation<br><small>37-47 (11 p)</small></td>
+<td><input type="number" min="37" max="47" value="36" id="p4" onchange="update()"></td>
+<td id="t4">0%</td>
+</tr><tr>
+<td>Amenorrhea<br><small>48-57 (10 p)</small></td>
+<td><input type="number" min="48" max="57" value="47" id="p5" onchange="update()"></td>
+<td id="t5">0%</td>
+</tr><tr>
+<td>Endometriosis<br><small>58-63 (6 p)</small></td>
+<td><input type="number" min="58" max="63" value="57" id="p6" onchange="update()"></td>
+<td id="t6">0%</td>
+</tr><tr>
+<td>Infertility<br><small>64-77 (14 p)</small></td>
+<td><input type="number" min="64" max="77" value="63" id="p7" onchange="update()"></td>
+<td id="t7">0%</td>
+</tr><tr>
+<td>Menstrual Disorders<br><small>78-86 (9 p)</small></td>
+<td><input type="number" min="78" max="86" value="77" id="p8" onchange="update()"></td>
+<td id="t8">0%</td>
+</tr><tr>
+<td>Sexually Transmitted Diseases<br><small>87-95 (9 p)</small></td>
+<td><input type="number" min="87" max="95" value="86" id="p9" onchange="update()"></td>
+<td id="t9">0%</td>
+</tr><tr>
+<td>Lower Genital Tract Infections<br><small>96-105 (10 p)</small></td>
+<td><input type="number" min="96" max="105" value="95" id="p10" onchange="update()"></td>
+<td id="t10">0%</td>
+</tr><tr>
+<td>Upper Genital Tract Infections<br><small>106-111 (6 p)</small></td>
+<td><input type="number" min="106" max="111" value="105" id="p11" onchange="update()"></td>
+<td id="t11">0%</td>
+</tr><tr>
+<td>Chronic Granulomatous Lesions<br><small>112-113 (2 p)</small></td>
+<td><input type="number" min="112" max="113" value="111" id="p12" onchange="update()"></td>
+<td id="t12">0%</td>
+</tr><tr>
+<td>Basics of Urogynecology<br><small>114-114 (1 p)</small></td>
+<td><input type="number" min="114" max="114" value="113" id="p13" onchange="update()"></td>
+<td id="t13">0%</td>
+</tr><tr>
+<td>SUI<br><small>115-120 (6 p)</small></td>
+<td><input type="number" min="115" max="120" value="114" id="p14" onchange="update()"></td>
+<td id="t14">0%</td>
+</tr><tr>
+<td>Urogenital Fistula<br><small>121-122 (2 p)</small></td>
+<td><input type="number" min="121" max="122" value="120" id="p15" onchange="update()"></td>
+<td id="t15">0%</td>
+</tr><tr>
+<td>Rectovaginal Fistula & Perineal Tears<br><small>123-124 (2 p)</small></td>
+<td><input type="number" min="123" max="124" value="122" id="p16" onchange="update()"></td>
+<td id="t16">0%</td>
+</tr><tr>
+<td>Genital Prolapse<br><small>125-134 (10 p)</small></td>
+<td><input type="number" min="125" max="134" value="124" id="p17" onchange="update()"></td>
+<td id="t17">0%</td>
+</tr><tr>
+<td>GTN<br><small>135-136 (2 p)</small></td>
+<td><input type="number" min="135" max="136" value="134" id="p18" onchange="update()"></td>
+<td id="t18">0%</td>
+</tr><tr>
+<td>Uterine Fibroid<br><small>137-146 (10 p)</small></td>
+<td><input type="number" min="137" max="146" value="136" id="p19" onchange="update()"></td>
+<td id="t19">0%</td>
+</tr><tr>
+<td>Premalignant Lesions<br><small>147-149 (3 p)</small></td>
+<td><input type="number" min="147" max="149" value="146" id="p20" onchange="update()"></td>
+<td id="t20">0%</td>
+</tr><tr>
+<td>Endometrial Carcinoma<br><small>150-154 (5 p)</small></td>
+<td><input type="number" min="150" max="154" value="149" id="p21" onchange="update()"></td>
+<td id="t21">0%</td>
+</tr><tr>
+<td>Cervical Carcinoma<br><small>155-160 (6 p)</small></td>
+<td><input type="number" min="155" max="160" value="154" id="p22" onchange="update()"></td>
+<td id="t22">0%</td>
+</tr><tr>
+<td>Ovarian Tumors<br><small>161-174 (14 p)</small></td>
+<td><input type="number" min="161" max="174" value="160" id="p23" onchange="update()"></td>
+<td id="t23">0%</td>
+</tr><tr>
+<td>Contraception<br><small>175-187 (13 p)</small></td>
+<td><input type="number" min="175" max="187" value="174" id="p24" onchange="update()"></td>
+<td id="t24">0%</td>
+</tr><tr>
+<td>Operative Gynecology<br><small>188-200 (13 p)</small></td>
+<td><input type="number" min="188" max="200" value="187" id="p25" onchange="update()"></td>
+<td id="t25">0%</td>
+</tr><tr>
+<td>Differential Diagnosis<br><small>201-201 (1 p)</small></td>
+<td><input type="number" min="201" max="201" value="200" id="p26" onchange="update()"></td>
+<td id="t26">0%</td>
+</tr></table>
+<script>
+const topics=[{s:2,e:14},{s:15,e:18},{s:19,e:27},{s:28,e:36},{s:37,e:47},{s:48,e:57},{s:58,e:63},{s:64,e:77},{s:78,e:86},{s:87,e:95},{s:96,e:105},{s:106,e:111},{s:112,e:113},{s:114,e:114},{s:115,e:120},{s:121,e:122},{s:123,e:124},{s:125,e:134},{s:135,e:136},{s:137,e:146},{s:147,e:149},{s:150,e:154},{s:155,e:160},{s:161,e:174},{s:175,e:187},{s:188,e:200},{s:201,e:201}]; const total=200;
+function update(){
+let done=0;
+topics.forEach((x,i)=>{
+ let v=parseInt(document.getElementById('p'+i).value)||x.s-1;
+ if(v<x.s)v=x.s-1;if(v>x.e)v=x.e;
+ localStorage.setItem('pg'+i,v);
+ let d=Math.max(0,v-x.s+1); done+=d;
+ document.getElementById('t'+i).innerText=Math.round(d/(x.e-x.s+1)*100)+'%';
+});
+let p=Math.round(done/total*100);
+bar.value=p; txt.innerText=p+'% ('+done+'/'+total+' pages)';
+}
+topics.forEach((x,i)=>{let v=localStorage.getItem('pg'+i); if(v!==null)document.getElementById('p'+i).value=v;});
+update();
+</script></body></html>
