@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gynecology Checklist</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+padding:20px;
+max-width:700px;
+margin:auto;
+}
+
+h1{
+text-align:center;
+color:#1565c0;
+}
+
+.section{
+background:white;
+padding:15px;
+border-radius:10px;
+margin-top:20px;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+label{
+display:block;
+padding:8px;
+font-size:18px;
+cursor:pointer;
+}
+
+progress{
+width:100%;
+height:25px;
+margin-bottom:15px;
+}
+
+#percent{
+font-size:20px;
+text-align:center;
+font-weight:bold;
+color:#1565c0;
+margin-bottom:10px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>📚 Gynecology Checklist</h1>
+
+<div id="percent">0%</div>
+<progress id="progress" value="0" max="100"></progress>
+
+<div class="section">
+<h2>Part I</h2>
+
+<label><input type="checkbox"> Anatomy</label>
+<label><input type="checkbox"> Embryology</label>
+<label><input type="checkbox"> Physiology</label>
+<label><input type="checkbox"> Puberty & Menopause</label>
+<label><input type="checkbox"> Anovulation</label>
+<label><input type="checkbox"> Amenorrhea</label>
+<label><input type="checkbox"> Endometriosis</label>
+<label><input type="checkbox"> Infertility</label>
+<label><input type="checkbox"> Menstrual Disorders (AUB, Dysmenorrhea & PMS)</label>
+<label><input type="checkbox"> Sexually Transmitted Diseases</label>
+<label><input type="checkbox"> Lower Genital Tract Infections</label>
+<label><input type="checkbox"> Upper Genital Tract Infections</label>
+<label><input type="checkbox"> Chronic Granulomatous Lesions</label>
+<label><input type="checkbox"> Basics of Urogynecology</label>
+<label><input type="checkbox"> SUI</label>
+<label><input type="checkbox"> Urogenital Fistula</label>
+<label><input type="checkbox"> Rectovaginal Fistula & Perineal Tears</label>
+<label><input type="checkbox"> Genital Prolapse</label>
+
+<h2>Part II</h2>
+
+<label><input type="checkbox"> Gestational Trophoblastic Neoplasia (GTN)</label>
+<label><input type="checkbox"> Uterine Fibroid</label>
+<label><input type="checkbox"> Premalignant Lesions</label>
+<label><input type="checkbox"> Endometrial Carcinoma</label>
+<label><input type="checkbox"> Cervical Carcinoma</label>
+<label><input type="checkbox"> Ovarian Tumors</label>
+<label><input type="checkbox"> Contraception</label>
+<label><input type="checkbox"> Operative Gynecology</label>
+<label><input type="checkbox"> Differential Diagnosis in Gynecology</label>
+
+</div>
+
+<script>
+
+const checks=document.querySelectorAll("input[type=checkbox]");
+
+checks.forEach((c,i)=>{
+c.checked=localStorage.getItem("lesson"+i)=="true";
+
+c.addEventListener("change",()=>{
+localStorage.setItem("lesson"+i,c.checked);
+update();
+});
+});
+
+function update(){
+
+let done=0;
+
+checks.forEach(c=>{
+if(c.checked)done++;
+});
+
+let percent=Math.round(done/checks.length*100);
+
+document.getElementById("progress").value=percent;
+document.getElementById("percent").innerHTML=percent+"% Completed";
+
+}
+
+update();
+
+</script>
+
+</body>
+</html>
